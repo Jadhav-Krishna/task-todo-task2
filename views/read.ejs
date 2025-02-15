@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>Read</title>
+</head>
+<body>
+    <div id="main" class="bg-zinc-900 h-screen w-full p-10 flex flex-col gap-7 overflow-auto">
+        <a href="/" class="text-blue-500">Create Task <i class="ri-arrow-right-s-line"></i></a>
+        <h1 class="text-2xl text-white">All Tasks</h1>
+        <div id="box" class="w-full h-full flex bg-zinc-900 relative flex-wrap gap-5">
+            <% if(task.length > 0){ %> 
+            <% task.forEach((e)=>{ %>
+                <div id="card" class="h-40 w-72 rounded-xl bg-zinc-800 p-5">
+                    <h1 class="text-white text-2xl mt-4"><%= e.taskTitle %></h1>
+                    <h3 class="text-slate-500"><%= e.taskDesc %></h3>
+                    <div id="wrapper" class="flex items-center justify-between">
+                        <a class="text-slate-300" href="/edit/<%= e._id %>">Edit</a>
+                        <a class="text-red-500" href="/delete/<%= e._id %>">Delete</a>
+                    </div>
+                </div>
+            <% }) %>
+            <% }else{ %>
+                <h1 class="text-9xl mt-[15%] ml-[30%] text-zinc-800 font-medium">No Task found</h1>
+           <% } %>
+        </div>
+    </div>
+</body>
+</html>

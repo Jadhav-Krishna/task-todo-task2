@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>update</title>
+</head>
+<body>
+    <div id="main" class="h-screen w-full bg-zinc-900 p-10 flex items-center justify-center ">
+        <div id="card" class="bg-zinc-800 h-full w-1/2 rounded-2xl relative flex gap-10 flex-col relative items-center justify-center max-[550px]:w-full">
+            <a href="/read" class="absolute text-blue-500 text-lg top-10 left-10"> Back </a>
+            <h1 class="text-3xl text-slate-300 font-medium">Update page</h1>
+            <form action="/update/<%= task._id %>" method="post" class="flex w-1/2 h-1/2 flex-col gap-10">
+                <input class="bg-zinc-700 p-3 rounded-xl text-slate-300 outline-none max-[550px]:w-[70vw] max-[550px]:ml-[-15vw]" type="text" name="taskTitle" value="<%= task.taskTitle %>" placeholder="Task Description">
+                <input class="bg-zinc-700 p-3 rounded-xl text-slate-300 outline-none max-[550px]:w-[70vw] max-[550px]:ml-[-15vw]" value="<%= task.taskDesc %>" name="taskDesc" placeholder="Task Description">
+                <input class="bg-yellow-500 p-3 rounded-3xl w-1/2 outline-none max-[550px]:w-[40vw] max-[550px]:ml-[-15vw]" type="submit" value="Update">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>TODO List</title>
+</head>
+<body>
+    <div id="main" class="h-screen w-full bg-zinc-900 flex  items-center justify-center">
+        <div id="card" class="flex bg-zinc-700 px-5 flex-col gap-5 py-10 rounded-xl">
+            <h1 class="text-3xl text-white">Todo List</h1>
+            <a class="inline-block text-blue-500" href="/read">View Task <i class="ri-arrow-right-s-line"></i></a>
+            <form action="/create" method="post" class="flex w-72 h-92 flex-col gap-5">
+                <input class="bg-zinc-800 p-3 rounded-lg text-slate-300 outline-none" type="text" name="taskTitle" placeholder="Task Title">
+                <input class="bg-zinc-800 p-3 text-slate-300 rounded-lg outline-none" type="text" name="taskDesc" placeholder="Task Description">
+                <input class="bg-blue-500 p-3 rounded-3xl outline-none" type="submit" value="Create Task">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
